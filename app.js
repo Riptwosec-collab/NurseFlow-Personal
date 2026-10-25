@@ -282,4 +282,3 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});document.a
 render();setInterval(checkReminder,30000);checkReminder();
 if('serviceWorker' in navigator&&['https:','http:'].includes(location.protocol))window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.warn('PWA:',err)));
 })();
-
