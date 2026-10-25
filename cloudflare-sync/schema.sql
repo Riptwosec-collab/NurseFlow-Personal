@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS sync_profiles (
+ id TEXT PRIMARY KEY NOT NULL,
+ token_hash TEXT NOT NULL,
+ revision INTEGER NOT NULL DEFAULT 1,
+ payload TEXT NOT NULL,
+ updated_at TEXT NOT NULL
+);
