@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 60;
+ objects = {
+
+/* Begin PBXBuildFile section */
+  4D004B7134ECC9F8FFF02112 = {
+   isa = PBXBuildFile;
+   fileRef = 8A12D11241114AE157B8954C;
+  };
+  F5F08057FA7F67E019F8D46C = {
+   isa = PBXBuildFile;
+   fileRef = 24D94C356C06522F90B650A1;
+  };
+  D710B54AC3AEA62C5D31E6CD = {
+   isa = PBXBuildFile;
+   fileRef = 1F1BFBAE10E46B50404A3816;
+  };
+  5E294B7AF1E8CCF24A06435B = {
+   isa = PBXBuildFile;
+   fileRef = 72D3DDEF03FD029F23B35BAF;
+  };
+  1E94B41864D401665F509215 = {
+   isa = PBXBuildFile;
+   fileRef = 198FCA40D76FACC13DED4132;
+  };
+  CE7D5FCEB598C620660D86B1 = {
+   isa = PBXBuildFile;
+   fileRef = 88F950F03EE75174988D15DA;
+  };
+  6CFC05C5B7004A5FB18520A2 = {
+   isa = PBXBuildFile;
+   fileRef = FAFA3A532074C47E7A53F85C;
+  };
+  66503BC86E7261E1EAD80325 = {
+   isa = PBXBuildFile;
+   fileRef = 90ACADECE6B4B3D21C954E00;
+  };
+  3B0A52DFA3772B0E414078BC = {
+   isa = PBXBuildFile;
+   fileRef = AFC7AAA404A4458930D9E641;
+  };
+  9F38C3B75177FBD79308B0DA = {
+   isa = PBXBuildFile;
+   fileRef = 0162EC4EA7BE23821887B551;
+  };
+  C90D00DC8D84462FC27AE0BA = {
+   isa = PBXBuildFile;
+   fileRef = AA9A2D95A75372CEA72573C4;
+  };
+  8B38AE1C1A74CB1541082E3A = {
+   isa = PBXBuildFile;
+   fileRef = 81A65B56D28F392565CA5D18;
+  };
+  69EAC07ABF2F3D775EEE6F02 = {
+   isa = PBXBuildFile;
+   fileRef = C5E1D0971A04D5AE320E5580;
+  };
+  F42A822FEEFAAF8DC2660CDA = {
+   isa = PBXBuildFile;
+   fileRef = 1E100DD1358EF6D551E7AE6C;
+  };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+  8A12D11241114AE157B8954C = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "NurseFlowApp.swift";
+   sourceTree = "<group>";
+  };
+  24D94C356C06522F90B650A1 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "Models.swift";
+   sourceTree = "<group>";
+  };
+  1F1BFBAE10E46B50404A3816 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "ScheduleMath.swift";
+   sourceTree = "<group>";
+  };
+  72D3DDEF03FD029F23B35BAF = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "ImportService.swift";
+   sourceTree = "<group>";
+  };
+  198FCA40D76FACC13DED4132 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "ReminderService.swift";
+   sourceTree = "<group>";
+  };
+  88F950F03EE75174988D15DA = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "ShiftStore.swift";
+   sourceTree = "<group>";
+  };
+  FAFA3A532074C47E7A53F85C = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "CalendarScreen.swift";
+   sourceTree = "<group>";
+  };
+  90ACADECE6B4B3D21C954E00 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "DashboardView.swift";
+   sourceTree = "<group>";
+  };
+  AFC7AAA404A4458930D9E641 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "EditShiftSheet.swift";
+   sourceTree = "<group>";
+  };
+  0162EC4EA7BE23821887B551 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "ReportsView.swift";
+   sourceTree = "<group>";
+  };
+  AA9A2D95A75372CEA72573C4 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "RootView.swift";
+   sourceTree = "<group>";
+  };
+  81A65B56D28F392565CA5D18 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "SettingsScreen.swift";
+   sourceTree = "<group>";
+  };
+  C5E1D0971A04D5AE320E5580 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "sourcecode.swift";
+   path = "Theme.swift";
+   sourceTree = "<group>";
+  };
+  8226ABA3915DF201CB8A98F3 = {
+   isa = PBXFileReference;
+   lastKnownFileType = "text.plist.xml";
+   path = "Info.plist";
+   sourceTree = "<group>";
+  };
+  1E100DD1358EF6D551E7AE6C = {
+   isa = PBXFileReference;
+   lastKnownFileType = "folder.assetcatalog";
+   path = "Assets.xcassets";
+   sourceTree = "<group>";
+  };
+  A8A7C1A3322FF4FADFF94C7F = {
+   isa = PBXFileReference;
+   explicitFileType = "wrapper.application";
+   includeInIndex = 0;
+   path = "NurseFlowPersonal.app";
+   sourceTree = BUILT_PRODUCTS_DIR;
+  };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+  69680EDE0CF9B24DB8DBFE04 = {
+   isa = PBXFrameworksBuildPhase;
+   buildActionMask = 2147483647;
+   files = (
+);
+   runOnlyForDeploymentPostprocessing = 0;
+  };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+  42944EBC669F21BC22392EB5 = {
+   isa = PBXGroup;
+   children = (
+  114E1D73B9B8BCD4E2171F53,
+  615B463D1028E4E24B674CF7,
+);
+   sourceTree = "<group>";
+  };
+  615B463D1028E4E24B674CF7 = {
+   isa = PBXGroup;
+   children = (
+  A8A7C1A3322FF4FADFF94C7F,
+);
+   name = Products;
+   sourceTree = "<group>";
+  };
+  114E1D73B9B8BCD4E2171F53 = {
+   isa = PBXGroup;
+   children = (
+  CBE7D790BBE2BD0D8B77EF39,
+  DFB04656BB5E98D2B1D6E309,
+  00A3F98365696328A139FDF3,
+  521C7ADFE310E932DB3AAC3B,
+  E5E98B546EE9848A91FF7C1F,
+);
+   path = NurseFlowPersonal;
+   sourceTree = "<group>";
+  };
+  CBE7D790BBE2BD0D8B77EF39 = {
+   isa = PBXGroup;
+   children = (
+  8A12D11241114AE157B8954C,
+);
+   path = App;
+   sourceTree = "<group>";
+  };
+  DFB04656BB5E98D2B1D6E309 = {
+   isa = PBXGroup;
+   children = (
+  24D94C356C06522F90B650A1,
+  1F1BFBAE10E46B50404A3816,
+);
+   path = Domain;
+   sourceTree = "<group>";
+  };
+  00A3F98365696328A139FDF3 = {
+   isa = PBXGroup;
+   children = (
+  72D3DDEF03FD029F23B35BAF,
+  198FCA40D76FACC13DED4132,
+  88F950F03EE75174988D15DA,
+);
+   path = Services;
+   sourceTree = "<group>";
+  };
+  521C7ADFE310E932DB3AAC3B = {
+   isa = PBXGroup;
+   children = (
+  FAFA3A532074C47E7A53F85C,
+  90ACADECE6B4B3D21C954E00,
+  AFC7AAA404A4458930D9E641,
+  0162EC4EA7BE23821887B551,
+  AA9A2D95A75372CEA72573C4,
+  81A65B56D28F392565CA5D18,
+  C5E1D0971A04D5AE320E5580,
+);
+   path = UI;
+   sourceTree = "<group>";
+  };
+  E5E98B546EE9848A91FF7C1F = {
+   isa = PBXGroup;
+   children = (
+  8226ABA3915DF201CB8A98F3,
+  1E100DD1358EF6D551E7AE6C,
+);
+   path = Resources;
+   sourceTree = "<group>";
+  };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+  9421A49CF30944062AC81495 = {
+   isa = PBXNativeTarget;
+   buildConfigurationList = 7DE97F2CECB2601227982F09;
+   buildPhases = (
+  F612CD2E22E187AC48B5913C,
+  69680EDE0CF9B24DB8DBFE04,
+  86F6FE2DD6E869C1842A14B3,
+);
+   buildRules = (
+);
+   dependencies = (
+);
+   name = NurseFlowPersonal;
+   productName = NurseFlowPersonal;
+   productReference = A8A7C1A3322FF4FADFF94C7F;
+   productType = "com.apple.product-type.application";
+  };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+  98F54143AB4E86B28C3AFEE0 = {
+   isa = PBXProject;
+   attributes = {
+  BuildIndependentTargetsInParallel = YES;
+  LastUpgradeCheck = 1600;
+  TargetAttributes = {
+  9421A49CF30944062AC81495 = {
+  CreatedOnToolsVersion = "16.0";
+};
+};
+};
+   buildConfigurationList = 6650A2B5E24FA7522CE6B81C;
+   compatibilityVersion = "Xcode 14.0";
+   developmentRegion = th;
+   hasScannedForEncodings = 0;
+   knownRegions = (
+  en,
+  Base,
+  th,
+);
+   mainGroup = 42944EBC669F21BC22392EB5;
+   productRefGroup = 615B463D1028E4E24B674CF7;
+   projectDirPath = "";
+   projectRoot = "";
+   targets = (
+  9421A49CF30944062AC81495,
+);
+  };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+  86F6FE2DD6E869C1842A14B3 = {
+   isa = PBXResourcesBuildPhase;
+   buildActionMask = 2147483647;
+   files = (
+  F42A822FEEFAAF8DC2660CDA,
+);
+   runOnlyForDeploymentPostprocessing = 0;
+  };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+  F612CD2E22E187AC48B5913C = {
+   isa = PBXSourcesBuildPhase;
+   buildActionMask = 2147483647;
+   files = (
+  4D004B7134ECC9F8FFF02112,
+  F5F08057FA7F67E019F8D46C,
+  D710B54AC3AEA62C5D31E6CD,
+  5E294B7AF1E8CCF24A06435B,
+  1E94B41864D401665F509215,
+  CE7D5FCEB598C620660D86B1,
+  6CFC05C5B7004A5FB18520A2,
+  66503BC86E7261E1EAD80325,
+  3B0A52DFA3772B0E414078BC,
+  9F38C3B75177FBD79308B0DA,
+  C90D00DC8D84462FC27AE0BA,
+  8B38AE1C1A74CB1541082E3A,
+  69EAC07ABF2F3D775EEE6F02,
+);
+   runOnlyForDeploymentPostprocessing = 0;
+  };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+  7FF1594F02A39252B36C2788 = {
+   isa = XCBuildConfiguration;
+   buildSettings = {
+  ALWAYS_SEARCH_USER_PATHS = NO;
+  CLANG_ENABLE_MODULES = YES;
+  CLANG_ENABLE_OBJC_ARC = YES;
+  CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+  ENABLE_STRICT_OBJC_MSGSEND = YES;
+  GCC_C_LANGUAGE_STANDARD = gnu17;
+  IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+  SDKROOT = iphoneos;
+  SWIFT_VERSION = "5.0";
+  TARGETED_DEVICE_FAMILY = 1;
+  DEBUG_INFORMATION_FORMAT = dwarf;
+  GCC_OPTIMIZATION_LEVEL = 0;
+  SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+  SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+  ENABLE_TESTABILITY = YES;
+};
+   name = Debug;
+  };
+  199D118360F571651611CBB6 = {
+   isa = XCBuildConfiguration;
+   buildSettings = {
+  PRODUCT_BUNDLE_IDENTIFIER = "com.nurseflow.personal";
+  PRODUCT_NAME = "$(TARGET_NAME)";
+  INFOPLIST_FILE = "NurseFlowPersonal/Resources/Info.plist";
+  GENERATE_INFOPLIST_FILE = NO;
+  SWIFT_VERSION = "5.0";
+  IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+  TARGETED_DEVICE_FAMILY = 1;
+  ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+  ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+  CODE_SIGN_STYLE = Automatic;
+  ENABLE_PREVIEWS = YES;
+  SUPPORTS_MACCATALYST = NO;
+  SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+  SWIFT_EMIT_LOC_STRINGS = YES;
+};
+   name = Debug;
+  };
+  8AF42D9F8E598D010F7434BA = {
+   isa = XCBuildConfiguration;
+   buildSettings = {
+  ALWAYS_SEARCH_USER_PATHS = NO;
+  CLANG_ENABLE_MODULES = YES;
+  CLANG_ENABLE_OBJC_ARC = YES;
+  CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+  ENABLE_STRICT_OBJC_MSGSEND = YES;
+  GCC_C_LANGUAGE_STANDARD = gnu17;
+  IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+  SDKROOT = iphoneos;
+  SWIFT_VERSION = "5.0";
+  TARGETED_DEVICE_FAMILY = 1;
+  DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+  SWIFT_OPTIMIZATION_LEVEL = "-O";
+  SWIFT_COMPILATION_MODE = wholemodule;
+};
+   name = Release;
+  };
+  68076E06222AB98C0FAF7D3B = {
+   isa = XCBuildConfiguration;
+   buildSettings = {
+  PRODUCT_BUNDLE_IDENTIFIER = "com.nurseflow.personal";
+  PRODUCT_NAME = "$(TARGET_NAME)";
+  INFOPLIST_FILE = "NurseFlowPersonal/Resources/Info.plist";
+  GENERATE_INFOPLIST_FILE = NO;
+  SWIFT_VERSION = "5.0";
+  IPHONEOS_DEPLOYMENT_TARGET = "17.0";
+  TARGETED_DEVICE_FAMILY = 1;
+  ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+  ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+  CODE_SIGN_STYLE = Automatic;
+  ENABLE_PREVIEWS = YES;
+  SUPPORTS_MACCATALYST = NO;
+  SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+  SWIFT_EMIT_LOC_STRINGS = YES;
+};
+   name = Release;
+  };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+  6650A2B5E24FA7522CE6B81C = {
+   isa = XCConfigurationList;
+   buildConfigurations = (
+  7FF1594F02A39252B36C2788,
+  8AF42D9F8E598D010F7434BA,
+);
+   defaultConfigurationIsVisible = 0;
+   defaultConfigurationName = Release;
+  };
+  7DE97F2CECB2601227982F09 = {
+   isa = XCConfigurationList;
+   buildConfigurations = (
+  199D118360F571651611CBB6,
+  68076E06222AB98C0FAF7D3B,
+);
+   defaultConfigurationIsVisible = 0;
+   defaultConfigurationName = Release;
+  };
+/* End XCConfigurationList section */
+ };
+ rootObject = 98F54143AB4E86B28C3AFEE0;
+}
