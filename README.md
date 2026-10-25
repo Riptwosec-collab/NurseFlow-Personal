@@ -79,3 +79,12 @@ python -m http.server 8080
 - Cloudflare D1 bindings: https://developers.cloudflare.com/d1/get-started/
 - SheetJS browser standalone: https://docs.sheetjs.com/docs/getting-started/installation/standalone/
 - Tesseract.js: https://github.com/naptha/tesseract.js
+
+## iPhone PWA layout patch v0.2.1
+- New `iphone-pwa.css` preserves White / Minimal / Pastel, loaded after existing `styles.css`.
+- Optimized for iPhone 16 Pro ~402×874 CSS px in portrait, 320/375/390 px phones and landscape at 874×402; tablet up to 900 px uses bottom navigation.
+- Fixed header and bottom nav honor the safe-area inset on all four sides, and page content leaves room below for navigation plus the Home indicator.
+- Calendar remains seven columns without horizontal overflow; forms use 16px inputs to prevent iOS automatic zoom and modals use a full-width bottom sheet.
+- `service-worker.js` caches the new stylesheet with a new `nurseflow-personal-v021` cache key. Publish all files together to Cloudflare Pages.
+- QA: 6 Chromium simulated viewports, 4 sections, add-shift modal and no horizontal overflow or JavaScript exceptions. Actual Safari standalone mode still needs an on-device smoke test.
+- Install on iPhone: open HTTPS page in Safari -> Share -> Add to Home Screen -> Open as Web App. If an old install is stale, reload or re-add the Home Screen shortcut.
