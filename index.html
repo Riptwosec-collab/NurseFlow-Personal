@@ -13,7 +13,8 @@
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./iphone-pwa.css" />
-  <title>NurseFlow Personal v0.3 | ตารางเวรของฉัน</title>
+  <link rel="stylesheet" href="./phone-frame.css" />
+  <title>NurseFlow Personal v0.4 | ตารางเวรของฉัน</title>
 </head>
 <body>
   <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -66,9 +67,9 @@
       <button type="button" class="bottom-link" data-page="stats"><svg><use href="#ic-chart"/></svg><span>สถิติ</span></button>
       <button type="button" class="bottom-link" data-page="settings"><svg><use href="#ic-settings"/></svg><span>ตั้งค่า</span></button>
     </nav>
+    <div id="modal-root"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
   </div>
-  <div id="modal-root"></div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="./app.js" defer></script>
 </body>
 </html>
