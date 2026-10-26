@@ -1,0 +1,66 @@
+/* NurseFlow v0.6: slightly bolder pastel, compact screens and quick leave. */
+:root{--blue:#3f76ca;--blue-soft:#d9e9ff;--pink:#c75e8a;--pink-soft:#ffdeeb;--violet:#7959bc;--violet-soft:#e6dcff;--mint:#228b70;--mint-soft:#d2f2e3;--amber:#b37b34;--amber-soft:#ffeaca;--text:#273951;--muted:#60738d;--line:#e2e9f3}
+.app-shell .topbar{border-bottom:1px solid #e1e9f5;background:linear-gradient(110deg,rgba(255,255,255,.99),rgba(242,247,255,.94))}
+.app-shell .main-area{background:radial-gradient(circle at 98% 0%,#eae2ff 0,transparent 38%),radial-gradient(circle at 4% 32%,#e7f4ff 0,transparent 48%),#fff}
+.app-shell .page-head .eyebrow,.app-shell .hero-tag,.app-shell .hero p,.app-shell .metric-foot{display:none}
+.app-shell .page-head{margin-bottom:12px}
+.app-shell .page-head h1{font-size:22px;letter-spacing:-.5px;color:#2e4665}
+.app-shell .page-head p{font-size:12px;color:#61758f;margin-top:4px}
+.app-shell .hero{min-height:115px;padding:16px 17px;gap:5px;border:1px solid #dfdff7;background:linear-gradient(117deg,#dcecff 0%,#e9e2ff 56%,#ffdfeb 100%);box-shadow:0 10px 24px #7a8dc52c;margin-bottom:14px}
+.app-shell .hero h2{font-size:20px;line-height:1.28;font-weight:850;color:#35476f}
+.app-shell .hero-art{transform:scale(.65);margin-right:-20px}
+.app-shell .metrics-grid{gap:10px;margin-bottom:14px}
+.app-shell .metric{min-height:93px;padding:14px;border-radius:18px;box-shadow:0 7px 18px #5f7fab15;border:1px solid #ffffffaa}
+.app-shell .metric.blue{background:linear-gradient(135deg,#d7eaff,#eaf4ff)}
+.app-shell .metric.pink{background:linear-gradient(135deg,#ffdaea,#fff0f6)}
+.app-shell .metric.violet{background:linear-gradient(135deg,#e3d9ff,#f0ecff)}
+.app-shell .metric.mint{background:linear-gradient(135deg,#cff4e3,#ebfff5)}
+.app-shell .metric-value{font-size:25px;font-weight:850}
+.app-shell .metric-label{color:#5a6e89;font-weight:750;margin-bottom:8px}
+.app-shell .panel{border:1px solid #e6eaf4;box-shadow:0 9px 20px #597ea015;border-radius:20px}
+.app-shell .panel-title{color:#314666;font-weight:850}
+.app-shell .calendar-cell{background:#fdfdff;border-color:#e2e9f4;transition:transform .15s ease,background .15s ease}
+.app-shell .calendar-cell.selected{background:#e5efff;border-color:#5685d9;box-shadow:0 0 0 1px #5685d9}
+.app-shell .calendar-cell.today .date-num{background:#4b7fcf;color:white;border-radius:8px}
+.app-shell .day-token.M,.app-shell .shift-pill.M{background:#cfe5ff;color:#3469b4}
+.app-shell .day-token.E,.app-shell .shift-pill.E{background:#ffd4e4;color:#b04774}
+.app-shell .day-token.N,.app-shell .shift-pill.N{background:#e1d5ff;color:#7652ad}
+.app-shell .day-token.OFF,.app-shell .shift-pill.OFF{background:#cef1df;color:#1c8461}
+.app-shell .day-token.LEAVE,.app-shell .shift-pill.LEAVE{background:#ffebc8;color:#94662c}
+.app-shell .action-button:not(.ghost):not(.danger):not(.pale){background:linear-gradient(125deg,#5289d9,#8370cf);box-shadow:0 7px 19px #6f85c643;color:#fff}
+.app-shell .action-button.pale{background:#e3eeff;color:#326bb8}
+.app-shell .bottom-add{background:linear-gradient(135deg,#4d90dc,#9276d7);box-shadow:0 8px 17px #6983c762}
+.app-shell .bottom-link.active{color:#356fc0;background:#dfecff}
+.app-shell .bottom-nav{box-shadow:0 -7px 24px #667bad20}
+.app-shell .lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;background:#edf2fa;border:1px solid #dce6f4;border-radius:12px;flex-shrink:0}
+.app-shell .lang-switch button{min-width:33px;min-height:30px;border:0;border-radius:9px;background:transparent;color:#7788a0;font-size:11px;font-weight:850;cursor:pointer}
+.app-shell .lang-switch button.active{color:#245a9d;background:#fff;box-shadow:0 2px 8px #7b92b333}
+.app-shell .header-actions{gap:9px}
+.app-shell .quick-toolbar{display:grid;grid-template-columns:1.3fr 1fr;gap:8px;margin:0 0 8px}
+.app-shell .quick-toolbar .action-button{padding:11px 8px;min-width:0;white-space:normal}
+.app-shell .quick-off-button{border:1px solid #e9a9c9;border-radius:14px;min-height:44px;background:linear-gradient(125deg,#ffcbe2,#f1dbff);color:#963f72;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 13px;font-size:12px;font-weight:850;box-shadow:0 5px 15px #c4759924;cursor:pointer}
+.app-shell .quick-off-button svg{width:18px;height:18px}
+.app-shell .home-shortcuts{margin:0 0 14px;display:flex}
+.app-shell .home-shortcuts .quick-off-button{width:100%;justify-content:space-between;min-height:45px}
+.app-shell .advanced-tools{margin:0 0 15px}
+.app-shell .advanced-tools summary{display:flex;justify-content:space-between;align-items:center;padding:5px 8px;font-size:11px;color:#6e7f98;cursor:pointer;list-style:none}
+.app-shell .advanced-tools summary::-webkit-details-marker{display:none}
+.app-shell .advanced-tools[open] summary svg{transform:rotate(90deg)}
+.app-shell .advanced-tools .toolbar{margin:9px 0 0;grid-template-columns:repeat(2,minmax(0,1fr))}
+.app-shell .selected-detail{gap:6px}
+.app-shell .selected-detail .detail-body{min-width:0}
+.app-shell .quick-day-button{color:#bb5086;background:#fff1f7;border-color:#f1d0e2;min-width:35px}
+.app-shell .quick-choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:17px}
+.app-shell .quick-choice-item{position:relative;cursor:pointer}
+.app-shell .quick-choice-item input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.app-shell .quick-choice-item span{display:flex;align-items:center;justify-content:center;gap:8px;min-height:70px;border:2px solid transparent;border-radius:18px;background:#d8f4e7;color:#207f64;font-size:14px;font-weight:850}
+.app-shell .quick-choice-item:nth-child(2) span{background:#ffe1ef;color:#b94f84}
+.app-shell .quick-choice-item input:checked+span{border-color:currentColor;box-shadow:0 5px 16px #65759a22;transform:translateY(-1px)}
+.app-shell .quick-choice-item input:focus-visible+span{outline:3px solid #8bb2ff;outline-offset:2px}
+.app-shell .quick-choice-item svg{width:22px;height:22px}
+.app-shell #modal-root .modal-card{border-top:3px solid #d6bcf3}
+.app-shell #modal-root .modal-header p{display:none}
+.app-shell .hint{font-size:11px;line-height:1.45}
+.app-shell .panel .caption{color:#687d96}
+@media(max-width:360px){.app-shell .page-head h1{font-size:20px}.app-shell .quick-toolbar{gap:5px}.app-shell .quick-off-button{font-size:11px;padding:9px 7px}}
+@media(prefers-reduced-motion:reduce){.app-shell .quick-choice-item input:checked+span{transform:none}}

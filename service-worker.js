@@ -1,5 +1,5 @@
-const CACHE='nurseflow-personal-v050';
-const ASSETS=['./','./index.html','./styles.css','./iphone-pwa.css','./phone-frame.css','./pastel-polish.css','./app.js','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png','./assets/apple-touch-icon.png'];
+const CACHE='nurseflow-personal-v0600';
+const ASSETS=['./','./index.html','./styles.css','./iphone-pwa.css','./phone-frame.css','./pastel-polish.css','./compact-pastel.css','./locale.js','./app.js','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png','./assets/apple-touch-icon.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('nurseflow-personal-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET'||new URL(event.request.url).origin!==self.location.origin)return;event.respondWith(fetch(event.request).then(res=>{if(res.ok){const c=res.clone();caches.open(CACHE).then(cache=>cache.put(event.request,c));}return res;}).catch(()=>caches.match(event.request)));});

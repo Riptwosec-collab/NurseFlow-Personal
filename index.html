@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="./iphone-pwa.css" />
   <link rel="stylesheet" href="./phone-frame.css" />
   <link rel="stylesheet" href="./pastel-polish.css" />
-  <title>NurseFlow Personal v0.5 | ตารางเวรของฉัน</title>
+  <link rel="stylesheet" href="./compact-pastel.css" />
+  <title>NurseFlow Personal v0.6 | My Shifts</title>
 </head>
 <body>
   <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -57,7 +58,7 @@
       <div class="privacy-pill"><svg><use href="#ic-shield"/></svg> ข้อมูลอยู่ในเครื่อง เว้นแต่เปิด Cloud Sync</div>
     </aside>
     <div class="main-area">
-      <header class="topbar"><div class="breadcrumb"><span class="mobile-brand"><span class="brand-mark small">+</span> Nurse<span>Flow</span></span><span id="page-crumb">พื้นที่ส่วนตัว <b>/</b> หน้าหลัก</span></div><div class="header-actions"><span class="local-badge"><span></span> Private by default</span><button type="button" class="avatar-btn" id="quick-settings" aria-label="การตั้งค่า">NF</button></div></header>
+      <header class="topbar"><div class="breadcrumb"><span class="mobile-brand"><span class="brand-mark small">+</span> Nurse<span>Flow</span></span><span id="page-crumb">พื้นที่ส่วนตัว <b>/</b> หน้าหลัก</span></div><div class="header-actions"><div class="lang-switch" role="group" aria-label="Language / ภาษา"><button type="button" data-lang="th" aria-label="ภาษาไทย">TH</button><button type="button" data-lang="en" aria-label="English">EN</button></div><span class="local-badge"><span></span> Private by default</span><button type="button" class="avatar-btn" id="quick-settings" aria-label="การตั้งค่า">NF</button></div></header>
       <main id="main-content" tabindex="-1" aria-live="polite"></main>
       <footer class="footer-note">Made for your everyday shifts <span>✳</span> NurseFlow Personal</footer>
     </div>
@@ -71,6 +72,7 @@
     <div id="modal-root"></div>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
   </div>
+  <script src="./locale.js" defer></script>
   <script src="./app.js" defer></script>
 </body>
 </html>
