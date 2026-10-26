@@ -1,3 +1,12 @@
+## v0.5 — Pastel Pop visual refresh (26 Oct 2026)
+
+- Light pastel visual polish across Dashboard, Calendar, statistics, settings and shift editor.
+- Improved contrast, card hierarchy, icon badges, tap states, and soft decorative accents.
+- On desktop, the app remains in the 402px iPhone-like frame; on iPhone it fills the screen.
+- Fixed the shift-code editor's desktop-browser overflow in phone preview mode.
+- All scheduling data models, localStorage keys and backup format remain unchanged.
+- Added `pastel-polish.css` as the final cascade layer, and advanced the PWA cache to v0.5.
+
 # NurseFlow Personal v0.3 — เว็บแอปขนาด iPhone เท่านั้น
 
 เปิดผ่านเว็บเบราว์เซอร์ได้ แต่ UI ใช้ขนาดโทรศัพท์ตลอด: บน iPhone เต็มหน้าจอ; บนคอมพิวเตอร์และแท็บเล็ตแสดงคอลัมน์กว้างไม่เกิน **430 CSS px** ตรงกลางโดยไม่สลับเป็น Desktop Dashboard. ธีม White × Minimal × Pastel และข้อมูล Local เดิมยังใช้ได้. เวอร์ชัน Native SwiftUI ถูกเก็บไว้ใน branch `archive/native-ios-v1.0` และเวอร์ชัน PWA ก่อนปรับโทรศัพท์อยู่ `archive/pwa-v0.2.1`.
