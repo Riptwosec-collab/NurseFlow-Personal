@@ -1,0 +1,87 @@
+
+/* NurseFlow v1.0 | Premium Pastel UI and accessible motion */
+:root{--nf-ease:cubic-bezier(.2,.85,.28,1);--nf-spring:cubic-bezier(.15,1.25,.28,1)}
+.app-shell{--nf-blue:#638bd9;--nf-purple:#9173db;--nf-green:#34a887;--nf-rose:#d873a5;--nf-text:#304365;--nf-soft:#f3f6fd}
+.app-shell .preset-pane{border-radius:22px;padding:14px 12px 13px;border:1px solid #dce6f7;background:linear-gradient(135deg,#eef5ff,#f5edff 56%,#fff0f6);box-shadow:0 12px 26px #6078ab13}
+.app-shell .preset-heading{margin-bottom:11px}
+.app-shell .preset-heading strong{font-size:13px;letter-spacing:.1px}
+.app-shell .preset-saved-list{display:grid;grid-template-columns:minmax(0,1fr);gap:9px;margin:6px 0 9px}
+.app-shell .preset-item{display:flex;align-items:stretch;flex-direction:column;min-width:0;border:1px solid #dbe6f7;border-radius:17px;background:linear-gradient(115deg,#fff,#f1f7ff);box-shadow:0 6px 14px #7191c110;overflow:hidden;animation:nf-preset-enter .3s var(--nf-ease) both;animation-delay:calc(var(--preset-order,0)*35ms)}
+.app-shell .preset-item.E,.app-shell .preset-item.LEAVE{background:linear-gradient(115deg,#fff8fb,#ffebf3);border-color:#f3d9e5}
+.app-shell .preset-item.N,.app-shell .preset-item.CUSTOM{background:linear-gradient(115deg,#fbf9ff,#ede7ff);border-color:#e1d7f8}
+.app-shell .preset-item.OFF{background:linear-gradient(115deg,#f8fffb,#e4f8ee);border-color:#cbe9dd}
+.app-shell .preset-item.favorite{box-shadow:0 0 0 1px #dfcbfd,0 9px 19px #7853af16}
+.app-shell .preset-card{display:flex;align-items:center;gap:10px;min-width:0;width:100%;padding:11px 12px 7px;background:transparent;border:0;text-align:left;color:#3a5382;cursor:pointer}
+.app-shell .preset-card-icon{flex:0 0 35px;width:35px;height:35px;border-radius:12px;display:grid;place-items:center;background:#dceafa;color:#4d7fc3}
+.app-shell .preset-card-icon svg{width:17px;height:17px}
+.app-shell .preset-item.E .preset-card-icon,.app-shell .preset-item.LEAVE .preset-card-icon{background:#fadddf;color:#b55b83}
+.app-shell .preset-item.N .preset-card-icon,.app-shell .preset-item.CUSTOM .preset-card-icon{background:#e2d7fe;color:#805bc4}
+.app-shell .preset-item.OFF .preset-card-icon{background:#d6f2e3;color:#24886c}
+.app-shell .preset-card-details{min-width:0;flex:1;display:flex;flex-direction:column;gap:4px}
+.app-shell .preset-card-details strong{font-size:13px;color:#334b71;white-space:normal;overflow-wrap:anywhere}
+.app-shell .preset-card-details small{font-size:11px;color:#7289a7;line-height:1.35}
+.app-shell .preset-card[aria-pressed=true]{background:#7595ff11}
+.app-shell .preset-card-tools{display:flex;justify-content:flex-end;align-items:center;gap:4px;padding:3px 8px 8px}
+.app-shell .preset-tool{display:grid;place-items:center;flex:0 0 31px;width:31px;height:31px;border:1px solid #dfebfa;border-radius:10px;background:#ffffffc9;color:#6585b1;cursor:pointer;transition:transform .16s var(--nf-spring),background .2s ease,color .2s ease}
+.app-shell .preset-tool svg{width:15px;height:15px}
+.app-shell .preset-tool.favorite-btn{font-size:21px;color:#bd8da7}
+.app-shell .preset-tool.favorite-btn[aria-pressed=true]{background:#fff0c5;color:#b87917;border-color:#f0cf84;animation:nf-favorite .35s var(--nf-spring)}
+.app-shell .preset-tool.preset-delete{background:#ffedf3;color:#bd6a89;font-size:18px}
+.app-shell .preset-tool:disabled{opacity:.33;cursor:not-allowed}
+.app-shell .preset-tool:active:not(:disabled),.app-shell .preset-card:active,.app-shell .preset-chip:active{transform:scale(.95)}
+.app-shell .preset-tool:focus-visible,.app-shell .preset-card:focus-visible{outline:2px solid #699bf1;outline-offset:2px}
+.app-shell .preset-item.favorite .preset-card-details strong:after{content:' ★';color:#c29636;font-size:11px}
+.app-shell .preset-update-linked{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:11px;border:1px solid #dfdff2;background:#f3f4ff;border-radius:13px;font-size:11px;color:#465d82;margin-top:12px;line-height:1.4}
+.app-shell .preset-update-linked input{width:17px;height:17px;accent-color:#8570c9}
+.app-shell .preset-update-linked strong{margin-left:auto;color:#735bb4}
+.app-shell .preset-edit{border-radius:17px;background:#fff;box-shadow:0 8px 28px #6f86af17}
+.app-shell .calendar-cell:not(.outside){border-radius:13px;transition:transform .18s var(--nf-ease),box-shadow .22s ease,background .22s ease}
+.app-shell .calendar-cell:not(.outside):active{transform:scale(.93);box-shadow:0 2px 0 #7ba8e6}
+.app-shell .calendar-cell.selected{background:linear-gradient(170deg,#e6edff,#f1eafe)!important;border:2px solid #779bdb!important;box-shadow:0 3px 12px #6c85de27}
+.app-shell .calendar-cell.today:not(.selected){border:1px solid #9cbaf4;box-shadow:inset 0 0 0 1px #c5d4ff}
+.app-shell .day-token:not(.blank){border-radius:7px;box-shadow:0 2px 3px #43678c0d}
+.app-shell .hero{box-shadow:0 16px 34px #637cad1e;border-radius:25px}
+.app-shell .panel{border-radius:20px;box-shadow:0 8px 25px #607aab10}
+.app-shell .metric{border-radius:19px;transition:transform .2s var(--nf-ease),box-shadow .24s}
+.app-shell .metric:active{transform:scale(.98)}
+.app-shell .action-button{transition:transform .16s var(--nf-spring),filter .2s,box-shadow .2s}
+.app-shell .action-button:active{transform:scale(.96);filter:brightness(.98)}
+.app-shell .bottom-nav .bottom-link{transition:color .22s,background .22s,transform .2s var(--nf-spring)}
+.app-shell .bottom-nav .bottom-link.active{transform:translateY(-2px)}
+.app-shell .bottom-nav .bottom-add{transition:transform .25s var(--nf-spring),box-shadow .25s}
+.app-shell .bottom-nav .bottom-add:active{transform:translateY(-2px) scale(.94)}
+.app-shell .page{animation:nf-page-enter .27s var(--nf-ease) both}
+.app-shell .modal-overlay{animation:nf-overlay .22s ease both}
+.app-shell .modal-card{animation:nf-bottom-sheet .34s var(--nf-spring) both;transform-origin:center bottom}
+html:not([data-theme=dark]) .app-shell .panel-head .panel-title{color:#354d78}
+html:not([data-theme=dark]) .app-shell .metrics-grid .metric:nth-child(1){background:linear-gradient(140deg,#dfeeff,#cfe4ff)}
+html:not([data-theme=dark]) .app-shell .metrics-grid .metric:nth-child(2){background:linear-gradient(140deg,#f0e7ff,#e4d8ff)}
+html:not([data-theme=dark]) .app-shell .metrics-grid .metric:nth-child(3){background:linear-gradient(140deg,#e0f7ee,#c8efdf)}
+html:not([data-theme=dark]) .app-shell .metrics-grid .metric:nth-child(4){background:linear-gradient(140deg,#ffebf2,#ffdce8)}
+html[data-theme=dark] .app-shell .preset-pane{background:linear-gradient(140deg,#243858,#38315e);border-color:#4e6086;box-shadow:0 14px 25px #080e2050}
+html[data-theme=dark] .app-shell .preset-item{background:linear-gradient(120deg,#263954,#20324d);border-color:#3a5275;box-shadow:0 5px 15px #060c1f3b}
+html[data-theme=dark] .app-shell .preset-item.E,html[data-theme=dark] .app-shell .preset-item.LEAVE{background:linear-gradient(110deg,#50374f,#3e344f);border-color:#775673}
+html[data-theme=dark] .app-shell .preset-item.N,html[data-theme=dark] .app-shell .preset-item.CUSTOM{background:linear-gradient(110deg,#453963,#353257);border-color:#68558d}
+html[data-theme=dark] .app-shell .preset-item.OFF{background:linear-gradient(110deg,#214b49,#28483e);border-color:#40716a}
+html[data-theme=dark] .app-shell .preset-card-details strong{color:#eff4ff}
+html[data-theme=dark] .app-shell .preset-card-details small{color:#c5d0e8}
+html[data-theme=dark] .app-shell .preset-card-icon{background:#34527b;color:#c0ddff}
+html[data-theme=dark] .app-shell .preset-tool{background:#324663;border-color:#526586;color:#c5d7ee}
+html[data-theme=dark] .app-shell .preset-tool.favorite-btn[aria-pressed=true]{background:#584b31;color:#ffdb92;border-color:#867648}
+html[data-theme=dark] .app-shell .preset-tool.preset-delete{background:#523549;color:#ffbad4;border-color:#735069}
+html[data-theme=dark] .app-shell .preset-update-linked{background:#34375a;border-color:#565b86;color:#dfe5ff}
+html[data-theme=dark] .app-shell .preset-update-linked strong{color:#e2c7ff}
+html[data-theme=dark] .app-shell .preset-edit{background:#25334f;border-color:#566483}
+html[data-theme=dark] .app-shell .calendar-cell.selected{background:linear-gradient(135deg,#34547f,#49386b)!important;border-color:#99bcfa!important;box-shadow:0 4px 15px #8193d544}
+html[data-theme=dark] .app-shell .metric{box-shadow:0 7px 20px #060a1950}
+html[data-theme=dark] .app-shell .hero{box-shadow:0 14px 31px #06091770}
+html[data-theme=dark] .app-shell .panel{box-shadow:0 10px 22px #060a1960}
+html[data-theme=dark] .app-shell .modal-card{box-shadow:0 -16px 40px #03071cb8}
+@keyframes nf-page-enter{from{opacity:.55;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nf-overlay{from{opacity:0}to{opacity:1}}
+@keyframes nf-bottom-sheet{from{opacity:.8;transform:translateY(45px)}to{opacity:1;transform:translateY(0)}}
+@keyframes nf-preset-enter{from{opacity:.1;transform:translateY(7px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes nf-favorite{0%{transform:scale(.7)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:no-preference){.app-shell,.app-shell .panel,.app-shell .metric,.app-shell .calendar-cell,.app-shell .topbar,.app-shell .bottom-nav,.app-shell .modal-card{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease}}
+@media(max-width:359px){.app-shell .preset-card-tools{gap:3px;padding-inline:6px}.app-shell .preset-tool{width:29px;flex-basis:29px}.app-shell .preset-update-linked{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.app-shell *,.app-shell *:before,.app-shell *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}

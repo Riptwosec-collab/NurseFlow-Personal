@@ -1,3 +1,10 @@
+## v1.0 — Permanent Presets · Premium Pastel · Motion
+
+- Edit and permanently overwrite saved presets without changing existing shifts by default. Opt in and confirm if updating linked current/future dates. Linked entries store a `presetId`; a local recovery point is created before bulk updates.
+- Favorite, duplicate, reorder and delete personal presets (up to 12). Favorite presets appear first. Presets remain part of the existing local JSON and Supabase user backup.
+- Visual refresh: refined preset cards, calendar states, backgrounds, shadows, hierarchy, touch feedback and bottom-sheet animations; accessible focus and reduced motion preference.
+- Light/Dark and TH/EN remain available; no schema migrations or destructive data resets.
+
 ## v0.9 — Editable presets / Dark mode (27 October 2026)
 
 - Edit saved preset name, code, schedule times, overtime type/hours, break duration and extra pay in a separate inline editor. No existing dated shift changes until that preset is explicitly reapplied and saved.
