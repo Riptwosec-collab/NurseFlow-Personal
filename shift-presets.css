@@ -1,0 +1,34 @@
+/* NurseFlow v0.8 — tap-to-edit calendar and favorite presets */
+.calendar-grid .calendar-cell:not(.outside){cursor:pointer;touch-action:manipulation;transition:transform .13s ease,box-shadow .15s ease,border-color .15s ease}
+.calendar-grid .calendar-cell:not(.outside):active{transform:scale(.94);border-color:#618fe4;box-shadow:0 0 0 3px #dceafe}
+.calendar-grid .calendar-cell:focus-visible{outline:3px solid #6e9be9;outline-offset:1px}
+.preset-pane{margin:0 0 18px;padding:14px 12px;background:linear-gradient(145deg,#f5f8ff 0%,#f9f4ff 60%,#fff6fa 100%);border:1px solid #e7e9f9;border-radius:19px}
+.preset-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.preset-heading strong{font-size:13px;color:#354a77;display:inline-flex;gap:7px;align-items:center}
+.preset-heading strong svg{width:16px;height:16px;color:#8571d3}
+.preset-heading>span{font-size:11px;color:#7284a2}
+.preset-scroll{display:flex;align-items:stretch;gap:7px;overflow-x:auto;max-width:100%;padding:2px 2px 7px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#d7dcec transparent}
+.preset-chip{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:3px;align-items:center;border:1px solid #dce5f5;background:#e8f2ff;color:#3263a9;padding:9px 10px;min-width:68px;min-height:55px;border-radius:12px;font-size:11px;line-height:1.25;touch-action:manipulation}
+.preset-chip strong{font-size:14px;font-weight:800}
+.preset-chip span{font-size:10px;max-width:91px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.preset-chip.E,.preset-chip.LEAVE{background:#ffe4ef;color:#a34273;border-color:#f5cede}
+.preset-chip.N,.preset-chip.CUSTOM{background:#eae1ff;color:#7051b4;border-color:#ddcdfa}
+.preset-chip.OFF{background:#dcf6e7;color:#247e62;border-color:#bde8d0}
+.preset-chip.saved{flex-direction:row;min-height:42px;min-width:70px;padding:8px 10px;background:#fff;color:#6758a5;border:1px solid #ddd9f5;gap:5px;font-weight:700}
+.preset-chip.saved svg{width:14px;height:14px}
+.preset-chip[aria-pressed="true"]{outline:2px solid #6f83d8;outline-offset:1px;box-shadow:0 3px 9px #859ddd2e}
+.preset-chip:active,.preset-new:active{transform:scale(.97)}
+.saved-heading{margin-top:7px}
+.preset-new{font-size:11px;display:flex;align-items:center;gap:3px;color:#5a75bf;border:0;background:#e8efff;padding:7px 9px;border-radius:10px;font-weight:700}
+.preset-new svg{width:14px;height:14px}
+.preset-saved-item{display:inline-flex;flex:0 0 auto;align-items:center;gap:1px;background:#fff;border:1px solid #dedafa;border-radius:13px;padding-right:5px}
+.preset-saved-item .preset-chip.saved{border:0;box-shadow:none}
+.preset-remove{width:26px;height:30px;border:0;border-radius:10px;background:#fff1f5;color:#b34c75;font-size:17px;line-height:1;flex:0 0 auto}
+.preset-empty,.preset-hint{font-size:10px;color:#778ba9;line-height:1.5}
+.preset-hint{display:block;margin-top:5px}
+.preset-create{padding:10px 0 5px;border-top:1px solid #e4e6f2;margin-top:3px}
+.preset-create[hidden]{display:none!important}
+.preset-create-row{display:flex;align-items:center;gap:6px}
+.preset-create-row .form-input{width:100%;flex:1;min-width:0;font-size:16px}
+.preset-create-row .action-button{flex:0 0 auto;font-size:11px;padding:10px;min-height:42px}
+@media(max-width:355px){.preset-heading{align-items:flex-start}.preset-pane{padding:11px 9px}.preset-create-row{flex-wrap:wrap}.preset-create-row .action-button{width:100%}}

@@ -1,3 +1,11 @@
+## v0.8 — แตะวันที่เปิดฟอร์ม / Presets
+
+- แตะวันที่ในปฏิทินเปิดฟอร์มแก้ไขเวรทันทีโดยไม่ต้องกดปุ่มเพิ่มซ้ำ
+- มีพรีเซตตามรหัสเวรเดิมและพรีเซตส่วนตัว บันทึกชื่อ เวลา OT และค่าเพิ่มพิเศษได้สูงสุด 12 รายการ
+- การเลือกพรีเซตเพียงเติมฟอร์ม ยังไม่เขียนเวรลงวันที่จนกดบันทึกเวร
+- พรีเซตเก็บใน settings ของข้อมูลเดิม จึงรวมอยู่ใน JSON Backup และ Supabase snapshot; ไม่เปลี่ยน schema ฐานข้อมูล
+- TH/EN รองรับข้อความใหม่และยังคงพื้นที่จอ iPhone
+
 ## v0.5 — Pastel Pop visual refresh (26 Oct 2026)
 
 - Light pastel visual polish across Dashboard, Calendar, statistics, settings and shift editor.
