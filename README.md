@@ -1,3 +1,10 @@
+## v0.9 — Editable presets / Dark mode (27 October 2026)
+
+- Edit saved preset name, code, schedule times, overtime type/hours, break duration and extra pay in a separate inline editor. No existing dated shift changes until that preset is explicitly reapplied and saved.
+- Night pastel theme accessible from a top-bar moon/sun toggle, persisted locally across browser reloads; default is light.
+- Theme applies to calendars, forms, statistics, Supabase account panel and shift editor. TH/EN preserved.
+- Existing local data key, backup schema and Supabase synchronization unchanged. Theme preference remains local to the device.
+
 ## v0.8 — แตะวันที่เปิดฟอร์ม / Presets
 
 - แตะวันที่ในปฏิทินเปิดฟอร์มแก้ไขเวรทันทีโดยไม่ต้องกดปุ่มเพิ่มซ้ำ

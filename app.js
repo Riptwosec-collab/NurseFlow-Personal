@@ -147,8 +147,8 @@ function showModal(inner){document.getElementById('modal-root').innerHTML=`<div 
 function close(){document.getElementById('modal-root').innerHTML='';pendingImport=[];}
 function options(code){return codes().map(c=>`<option value="${c}" ${code===c?'selected':''}>${esc(c)} — ${esc(description(c))}</option>`).join('')}
 
-function presetSavedItems(){const arr=data.settings.presets||[];return arr.length?arr.map(p=>`<span class="preset-saved-item"><button type="button" class="preset-chip saved" data-action="preset-apply" data-id="${esc(p.id)}" aria-label="ใช้พรีเซต ${esc(p.name)}">${icon('sparkles')} ${esc(p.name)}</button><button type="button" class="preset-remove" data-action="preset-remove" data-id="${esc(p.id)}" aria-label="ลบพรีเซต ${esc(p.name)}" title="ลบพรีเซต">×</button></span>`).join(''):'<span class="preset-empty">ยังไม่มีพรีเซตที่บันทึก</span>'}
-function presetPicker(){return `<div class="preset-pane"><div class="preset-heading"><strong>${icon('sparkles')} พรีเซตเวร</strong><span>เลือกเวรได้ทันที</span></div><div class="preset-scroll" role="group" aria-label="พรีเซตเวร">${codes().map(c=>`<button type="button" class="preset-chip ${skin(c)}" data-action="preset-base" data-code="${esc(c)}" aria-label="${esc(description(c))}"><strong>${esc(c==='OFF'?'OFF':c==='LEAVE'?'ลา':c)}</strong><span>${esc(description(c))}</span></button>`).join('')}</div><div class="preset-heading saved-heading"><strong>พรีเซตของฉัน</strong><button type="button" class="preset-new" data-action="preset-new">${icon('plus')} บันทึกเป็นพรีเซต</button></div><div class="preset-scroll saved-scroll" id="preset-saved-items">${presetSavedItems()}</div><div class="preset-create" id="preset-create" hidden><label class="form-label" for="preset-name">ชื่อพรีเซต</label><div class="preset-create-row"><input id="preset-name" class="form-input" maxlength="24" placeholder="เช่น เวรเช้า + OT" autocomplete="off"/><button type="button" class="action-button" data-action="preset-save">บันทึกพรีเซต</button></div></div><small class="preset-hint">เลือกแล้วกดบันทึกเวรเพื่อยืนยัน</small></div>`}
+function presetSavedItems(){const arr=data.settings.presets||[];return arr.length?arr.map(p=>`<span class="preset-saved-item"><button type="button" class="preset-chip saved" data-action="preset-apply" data-id="${esc(p.id)}" aria-label="ใช้พรีเซต ${esc(p.name)}">${icon('sparkles')} ${esc(p.name)}</button><button type="button" class="preset-edit-btn" data-action="preset-edit" data-id="${esc(p.id)}" aria-label="แก้ไขพรีเซต ${esc(p.name)}" title="แก้ไขพรีเซต">${icon('edit')}</button><button type="button" class="preset-remove" data-action="preset-remove" data-id="${esc(p.id)}" aria-label="ลบพรีเซต ${esc(p.name)}" title="ลบพรีเซต">×</button></span>`).join(''):'<span class="preset-empty">ยังไม่มีพรีเซตที่บันทึก</span>'}
+function presetPicker(){return `<div class="preset-pane"><div class="preset-heading"><strong>${icon('sparkles')} พรีเซตเวร</strong><span>เลือกเวรได้ทันที</span></div><div class="preset-scroll" role="group" aria-label="พรีเซตเวร">${codes().map(c=>`<button type="button" class="preset-chip ${skin(c)}" data-action="preset-base" data-code="${esc(c)}" aria-label="${esc(description(c))}"><strong>${esc(c==='OFF'?'OFF':c==='LEAVE'?'ลา':c)}</strong><span>${esc(description(c))}</span></button>`).join('')}</div><div class="preset-heading saved-heading"><strong>พรีเซตของฉัน</strong><button type="button" class="preset-new" data-action="preset-new">${icon('plus')} บันทึกเป็นพรีเซต</button></div><div class="preset-scroll saved-scroll" id="preset-saved-items">${presetSavedItems()}</div><div class="preset-edit" id="preset-edit" hidden></div><div class="preset-create" id="preset-create" hidden><label class="form-label" for="preset-name">ชื่อพรีเซต</label><div class="preset-create-row"><input id="preset-name" class="form-input" maxlength="24" placeholder="เช่น เวรเช้า + OT" autocomplete="off"/><button type="button" class="action-button" data-action="preset-save">บันทึกพรีเซต</button></div></div><small class="preset-hint">เลือกแล้วกดบันทึกเวรเพื่อยืนยัน</small></div>`}
 function applyPresetValue(p){const code=document.getElementById('edit-code');if(!code||!data.settings.shifts[p.code]){toast('ไม่พบรหัสเวรของพรีเซต');return}code.value=p.code;updateEditor();
  if(isWork(p.code)){document.getElementById('edit-start').value=p.start||data.settings.shifts[p.code].start;document.getElementById('edit-end').value=p.end||data.settings.shifts[p.code].end;
  document.getElementById('edit-ot').value=p.ot||0;document.getElementById('edit-ot-mode').value=p.otMode==='within'?'within':'additional';
@@ -161,6 +161,38 @@ function saveEditorPreset(){let item;try{item=readEditor()}catch(e){toast(e.mess
  const old=data.settings.presets||[];if(old.length>=12){toast('บันทึกได้สูงสุด 12 พรีเซต');return}
  const p={id:'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,7),name:name.slice(0,24),code:item.e.code,start:item.e.start,end:item.e.end,ot:item.e.ot,otMode:item.e.otMode,breakMinutes:item.e.breakMinutes,extra:item.e.extra};
  data.settings.presets=[...old,p];if(commit('บันทึกพรีเซตแล้ว')){document.getElementById('preset-saved-items').innerHTML=presetSavedItems();document.getElementById('preset-create').hidden=true;input.value='';}else data.settings.presets=old;
+}
+
+function editPresetFields(id){
+ const p=(data.settings.presets||[]).find(x=>x.id===id);if(!p)return;
+ const area=document.getElementById('preset-edit');if(!area)return;
+ document.getElementById('preset-create').hidden=true;
+ area.innerHTML=`<div class="preset-edit-header"><strong>${icon('edit')} แก้ไขพรีเซต</strong><button type="button" class="icon-button" data-action="preset-cancel" aria-label="ปิดการแก้ไข">${icon('x')}</button></div>
+ <label class="form-label" for="preset-edit-name">ชื่อพรีเซต</label><input class="form-input" id="preset-edit-name" maxlength="24" value="${esc(p.name)}" />
+ <label class="form-label" for="preset-edit-code">ประเภทเวร</label><select class="form-input" id="preset-edit-code">${options(p.code)}</select>
+ <div id="preset-edit-work" ${isWork(p.code)?'':'hidden'}><div class="form-grid"><div class="form-field"><label class="form-label" for="preset-edit-start">เริ่ม</label><input class="form-input" id="preset-edit-start" type="time" value="${p.start||'07:00'}" /></div><div class="form-field"><label class="form-label" for="preset-edit-end">สิ้นสุด</label><input class="form-input" id="preset-edit-end" type="time" value="${p.end||'15:00'}" /></div></div>
+ <div class="form-grid"><div class="form-field"><label class="form-label" for="preset-edit-ot">OT (ชม.)</label><input class="form-input" id="preset-edit-ot" type="number" min="0" max="24" step="0.25" value="${p.ot||0}" /></div><div class="form-field"><label class="form-label" for="preset-edit-mode">รูปแบบ OT</label><select class="form-input" id="preset-edit-mode"><option value="additional" ${p.otMode!=='within'?'selected':''}>ต่อท้ายกะ</option><option value="within" ${p.otMode==='within'?'selected':''}>ภายในกะ</option></select></div></div>
+ <div class="form-grid"><div class="form-field"><label class="form-label" for="preset-edit-break">พัก (นาที)</label><input class="form-input" id="preset-edit-break" type="number" min="0" max="240" value="${p.breakMinutes||0}" /></div><div class="form-field"><label class="form-label" for="preset-edit-extra">เงินเพิ่ม (บาท)</label><input class="form-input" id="preset-edit-extra" type="number" min="0" max="100000" step="0.01" value="${p.extra||0}" /></div></div></div>
+ <div class="preset-edit-actions"><button type="button" class="action-button ghost" data-action="preset-cancel">ยกเลิก</button><button type="button" class="action-button" data-action="preset-update" data-id="${esc(p.id)}">${icon('check')} บันทึกพรีเซต</button></div>`;
+ area.hidden=false;area.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+function updatePresetCode(){const code=document.getElementById('preset-edit-code')?.value;
+ const work=isWork(code);document.getElementById('preset-edit-work').hidden=!work;
+ if(work){document.getElementById('preset-edit-start').value=data.settings.shifts[code]?.start||'07:00';document.getElementById('preset-edit-end').value=data.settings.shifts[code]?.end||'15:00';}
+}
+function savePresetChanges(id){const old=data.settings.presets||[];const index=old.findIndex(p=>p.id===id);if(index<0)return;
+ const field=x=>document.getElementById(x),name=field('preset-edit-name')?.value.trim(),code=field('preset-edit-code')?.value;
+ if(!name){toast('กรุณาตั้งชื่อพรีเซต');field('preset-edit-name')?.focus();return}
+ if(!data.settings.shifts[code]){toast('ไม่พบรหัสเวร');return}
+ const work=isWork(code),start=work?field('preset-edit-start').value:null,end=work?field('preset-edit-end').value:null;
+ const ot=work?Number(field('preset-edit-ot').value):0,breakMinutes=work?Number(field('preset-edit-break').value):0,extra=work?Number(field('preset-edit-extra').value):0;
+ const otMode=work&&field('preset-edit-mode').value==='within'?'within':'additional';
+ if(work&&(!validTime(start)||!validTime(end)||!Number.isFinite(ot)||ot<0||ot>24||!Number.isFinite(breakMinutes)||breakMinutes<0||breakMinutes>240||!Number.isFinite(extra)||extra<0||extra>100000)){toast('ตรวจเวลา OT และค่าเพิ่มอีกครั้ง');return}
+ if(work&&otMode==='within'&&ot>timeBreakdown({code,start,end,ot:0,otMode:'within',breakMinutes}).scheduled){toast('OT ภายในกะมากกว่าชั่วโมงทำงาน');return}
+ const updated={...old[index],name:name.slice(0,24),code,start,end,ot,otMode,breakMinutes,extra};
+ data.settings.presets=old.map((p,i)=>i===index?updated:p);
+ if(commit('แก้ไขพรีเซตแล้ว')){field('preset-edit').hidden=true;field('preset-edit').innerHTML='';field('preset-saved-items').innerHTML=presetSavedItems()}
+ else data.settings.presets=old;
 }
 function removeEditorPreset(id){const old=data.settings.presets||[],p=old.find(x=>x.id===id);if(!p)return;if(!confirm('ลบพรีเซต '+p.name+' ใช่หรือไม่?'))return;
  data.settings.presets=old.filter(x=>x.id!==id);if(commit('ลบพรีเซตแล้ว'))document.getElementById('preset-saved-items').innerHTML=presetSavedItems();else data.settings.presets=old;
@@ -327,7 +359,7 @@ function eventHandler(e){const nav=e.target.closest('[data-page]');if(nav){navig
  case 'preset-base':{const code=btn.dataset.code;applyPresetValue({code,start:data.settings.shifts[code]?.start,end:data.settings.shifts[code]?.end,ot:0,otMode:'additional',breakMinutes:0,extra:0});break}
  case 'preset-apply':{const p=(data.settings.presets||[]).find(p=>p.id===btn.dataset.id);if(p)applyPresetValue(p);break}
  case 'preset-new':{const form=document.getElementById('preset-create');form.hidden=!form.hidden;if(!form.hidden)document.getElementById('preset-name').focus();break}
- case 'preset-save':saveEditorPreset();break;case 'preset-remove':removeEditorPreset(btn.dataset.id);break;
+ case 'preset-save':saveEditorPreset();break;case 'preset-edit':editPresetFields(btn.dataset.id);break;case 'preset-update':savePresetChanges(btn.dataset.id);break;case 'preset-cancel':{const node=document.getElementById('preset-edit');if(node){node.hidden=true;node.innerHTML=''}break}case 'preset-remove':removeEditorPreset(btn.dataset.id);break;
  case 'quick-off':quickOffModal(date||ui.date);break;case 'bulk':bulkModal();break;case 'copy':copyModal();break;case 'toggle-list':ui.listAll=!ui.listAll;render();break;case 'delete':deleteEntry(date);break;
  case 'save-settings':saveSettings();break;case 'create-code':createCode();break;case 'remove-code':removeCode(btn.dataset.code);break;
  case 'import-open':importModal();break;case 'import-confirm':confirmImport();break;case 'restore-points':restorePoints();break;case 'restore-point':restorePoint(btn.dataset.id);break;
@@ -338,7 +370,7 @@ function eventHandler(e){const nav=e.target.closest('[data-page]');if(nav){navig
  }}
 document.addEventListener('click',eventHandler);
 document.addEventListener('submit',e=>{if(e.target.id==='edit-form')editSubmit(e);if(e.target.id==='bulk-form')bulkSubmit(e);if(e.target.id==='copy-form')copySubmit(e);if(e.target.id==='quick-off-form')quickOffSubmit(e)});
-document.addEventListener('change',e=>{if(e.target.id==='edit-code')updateEditor();if(e.target.id==='bulk-pattern'){const isSeq=e.target.value==='sequence';document.getElementById('bulk-single-box').classList.toggle('hidden',isSeq);document.getElementById('bulk-sequence-box').classList.toggle('hidden',!isSeq)}if(e.target.id==='shift-import')importFile(e.target.files[0]);if(e.target.id==='import-json'){importJSON(e.target.files[0]);e.target.value=''}});
+document.addEventListener('change',e=>{if(e.target.id==='edit-code')updateEditor();if(e.target.id==='preset-edit-code')updatePresetCode();if(e.target.id==='bulk-pattern'){const isSeq=e.target.value==='sequence';document.getElementById('bulk-single-box').classList.toggle('hidden',isSeq);document.getElementById('bulk-sequence-box').classList.toggle('hidden',!isSeq)}if(e.target.id==='shift-import')importFile(e.target.files[0]);if(e.target.id==='import-json'){importJSON(e.target.files[0]);e.target.value=''}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});document.addEventListener('click',e=>{if(e.target.id==='editor-overlay')close()});
 window.NurseFlowData={
  getSnapshot:()=>clone(data),
