@@ -2,7 +2,7 @@
   "id":"./",
   "name":"NurseFlow Personal — ตารางเวรของฉัน",
   "short_name":"NurseFlow",
-  "description":"แอปจัดเวรส่วนตัว v0.3 ธีมขาวพาสเทล รายงาน OT และสำรองข้อมูล",
+  "description":"แอปจัดเวรส่วนตัว v0.7 ธีมขาวพาสเทล รายงาน OT และสำรองข้อมูล",
   "start_url":"./",
   "scope":"./",
   "display":"standalone",
