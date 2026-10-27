@@ -194,19 +194,58 @@ function updatePresetCode(){const code=document.getElementById('preset-edit-code
  const work=isWork(code);document.getElementById('preset-edit-work').hidden=!work;
  if(work){document.getElementById('preset-edit-start').value=data.settings.shifts[code]?.start||'07:00';document.getElementById('preset-edit-end').value=data.settings.shifts[code]?.end||'15:00';}
 }
-function savePresetChanges(id){const old=data.settings.presets||[];const index=old.findIndex(p=>p.id===id);if(index<0)return;
+async function savePresetChanges(id){
+ const beforePresets=data.settings.presets||[],idx=beforePresets.findIndex(p=>p.id===id);if(idx<0)return;
  const field=x=>document.getElementById(x),name=field('preset-edit-name')?.value.trim(),code=field('preset-edit-code')?.value;
  if(!name){toast('กรุณาตั้งชื่อพรีเซต');field('preset-edit-name')?.focus();return}
  if(!data.settings.shifts[code]){toast('ไม่พบรหัสเวร');return}
  const work=isWork(code),start=work?field('preset-edit-start').value:null,end=work?field('preset-edit-end').value:null;
  const ot=work?Number(field('preset-edit-ot').value):0,breakMinutes=work?Number(field('preset-edit-break').value):0,extra=work?Number(field('preset-edit-extra').value):0;
  const otMode=work&&field('preset-edit-mode').value==='within'?'within':'additional';
- if(work&&(!validTime(start)||!validTime(end)||!Number.isFinite(ot)||ot<0||ot>24||!Number.isFinite(breakMinutes)||breakMinutes<0||breakMinutes>240||!Number.isFinite(extra)||extra<0||extra>100000)){toast('ตรวจเวลา OT และค่าเพิ่มอีกครั้ง');return}
- if(work&&otMode==='within'&&ot>timeBreakdown({code,start,end,ot:0,otMode:'within',breakMinutes}).scheduled){toast('OT ภายในกะมากกว่าชั่วโมงทำงาน');return}
- const updated={...old[index],name:name.slice(0,24),code,start,end,ot,otMode,breakMinutes,extra};
- data.settings.presets=old.map((p,i)=>i===index?updated:p);
- if(commit('แก้ไขพรีเซตแล้ว')){field('preset-edit').hidden=true;field('preset-edit').innerHTML='';field('preset-saved-items').innerHTML=presetSavedItems()}
- else data.settings.presets=old;
+ if(work&&(!validTime(start)||!validTime(end)||![ot,breakMinutes,extra].every(Number.isFinite)||ot<0||ot>24||breakMinutes<0||breakMinutes>240||extra<0||extra>100000)){toast('ตรวจเวลา OT และค่าเพิ่มอีกครั้ง');return}
+ if(work&&otMode==='within'&&ot>timeBreakdown({code,start,end,ot:0,otMode,breakMinutes}).scheduled){toast('OT ภายในกะมากกว่าชั่วโมงทำงาน');return}
+ const updated={...beforePresets[idx],name:name.slice(0,24),code,start,end,ot,otMode,breakMinutes,extra};
+ const linked=Object.entries(data.shifts).filter(([date,e])=>date>=today&&e.presetId===id);
+ const replaceDates=field('preset-update-linked')?.checked===true&&linked.length>0;
+ if(replaceDates&&!confirm(`อัปเดตเวร ${linked.length} วัน ที่เคยใช้พรีเซตนี้? ระบบจะเก็บหมายเหตุของแต่ละวันไว้`))return;
+ const beforeShifts=data.shifts,beforeDemo=data.demoDates;
+ if(replaceDates){
+  const draft={...data.shifts};
+  for(const [date,e] of linked)draft[date]={...e,code,start,end,ot,otMode,breakMinutes,extra,presetId:id};
+  const newRisks=warnings(draft).filter(w=>linked.some(([date])=>w.a===date||w.b===date));
+  if(newRisks.length&&!confirm(`พบเวรชนกัน/เวลาพักต่ำกว่าเกณฑ์ ${newRisks.length} จุด บันทึกต่อหรือไม่?`))return;
+  await backupSnapshot('before-preset-bulk-update');
+  data.shifts=draft;data.demoDates=beforeDemo.filter(date=>!linked.some(([d])=>d===date));
+ }
+ data.settings.presets=beforePresets.map((p,i)=>i===idx?updated:p);
+ if(commit(replaceDates?`อัปเดตพรีเซตและเวร ${linked.length} วันแล้ว`:'อัปเดตพรีเซตถาวรแล้ว')){
+  field('preset-edit').hidden=true;field('preset-edit').innerHTML='';
+  field('preset-saved-items').innerHTML=presetSavedItems();
+  const form=document.getElementById('edit-form');
+  if(form?.dataset.presetId===id)applyPresetValue(updated);
+ }else{data.settings.presets=beforePresets;data.shifts=beforeShifts;data.demoDates=beforeDemo}
+}
+function refreshPresetList(){const root=document.getElementById('preset-saved-items');if(root)root.innerHTML=presetSavedItems()}
+function presetToggleFavorite(id){
+ const before=data.settings.presets||[],p=before.find(x=>x.id===id);if(!p)return;
+ data.settings.presets=before.map(x=>x.id===id?{...x,favorite:!x.favorite}:x);
+ if(commit(p.favorite?'ยกเลิกรายการโปรดแล้ว':'ปักหมุดพรีเซตแล้ว'))refreshPresetList();else data.settings.presets=before;
+}
+function presetDuplicate(id){
+ const before=data.settings.presets||[],p=before.find(x=>x.id===id);if(!p)return;
+ if(before.length>=12){toast('บันทึกได้สูงสุด 12 พรีเซต');return}
+ const duplicate={...p,id:'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,7),name:(p.name+' copy').slice(0,24),favorite:false};
+ data.settings.presets=[...before,duplicate];
+ if(commit('คัดลอกพรีเซตแล้ว'))refreshPresetList();else data.settings.presets=before;
+}
+function presetMove(id,direction){
+ const before=data.settings.presets||[],ordered=before.map((p,i)=>({...p,_idx:i})).sort((a,b)=>Number(!!b.favorite)-Number(!!a.favorite)||a._idx-b._idx);
+ const index=ordered.findIndex(x=>x.id===id),other=ordered[index+direction];if(index<0||!other)return;
+ const swapped=ordered.map(({_idx,...p})=>p);
+ [swapped[index],swapped[index+direction]]=[swapped[index+direction],swapped[index]];
+ const count=before.filter(p=>p.favorite).length;
+ data.settings.presets=swapped.map((p,i)=>({...p,favorite:i<count}));
+ if(commit('จัดลำดับพรีเซตแล้ว'))refreshPresetList();else data.settings.presets=before;
 }
 function removeEditorPreset(id){const old=data.settings.presets||[],p=old.find(x=>x.id===id);if(!p)return;if(!confirm('ลบพรีเซต '+p.name+' ใช่หรือไม่?'))return;
  data.settings.presets=old.filter(x=>x.id!==id);if(commit('ลบพรีเซตแล้ว'))document.getElementById('preset-saved-items').innerHTML=presetSavedItems();else data.settings.presets=old;
