@@ -1,0 +1,113 @@
+/* NurseFlow v0.9 polished Light / Midnight Pastel */
+.app-shell .theme-toggle{display:grid;place-items:center;width:35px;height:35px;flex:0 0 35px;border:1px solid #d7e2f6;border-radius:12px;color:#5879bb;background:linear-gradient(145deg,#e7f0ff,#f5ebff);cursor:pointer;transition:transform .18s ease}
+.app-shell .theme-toggle svg{width:18px;height:18px}
+.app-shell .theme-toggle:active{transform:scale(.92)}
+.app-shell .header-actions{gap:6px}
+.app-shell .lang-switch{padding:2px}
+.app-shell .lang-switch button{min-width:29px;min-height:29px}
+.app-shell .avatar-btn{width:33px;height:33px;flex:0 0 33px}
+.preset-edit-btn{display:grid;place-items:center;flex:0 0 27px;width:27px;height:30px;background:#e6efff;border:0;color:#507abf;border-radius:9px;cursor:pointer}
+.preset-edit-btn svg{width:15px;height:15px}
+.preset-saved-item{gap:3px;padding:3px 5px 3px 2px}
+.preset-saved-item .preset-chip.saved{padding:7px 8px;white-space:normal;text-align:left;min-width:0;max-width:130px}
+.preset-edit-btn:focus-visible,.preset-remove:focus-visible{outline:2px solid #7fa4ff;outline-offset:2px}
+.preset-edit{margin:12px 0 8px;padding:13px 12px;border:1px solid #d9d9ef;border-radius:15px;background:#ffffffed;box-shadow:0 5px 16px #849ad013}
+.preset-edit[hidden],#preset-edit-work[hidden]{display:none!important}
+.preset-edit-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+.preset-edit-header strong{display:flex;align-items:center;gap:7px;color:#4c61a0;font-size:14px}
+.preset-edit-header svg{width:16px;height:16px}
+.preset-edit>.form-label{margin:10px 0 6px}
+.preset-edit .form-grid{gap:8px;margin-top:11px}
+.preset-edit .form-field{margin:0}
+.preset-edit .form-input{width:100%;min-width:0;padding:10px 9px;font-size:16px}
+.preset-edit-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:7px;margin-top:14px}
+.preset-edit-actions .action-button{min-height:43px;font-size:12px;padding:9px 11px}
+html:not([data-theme="dark"]) .app-shell .hero{background:radial-gradient(circle at 90% 12%,#ffffff9a,transparent 46%),linear-gradient(115deg,#d4e8ff,#e9ddff 60%,#ffdeec)}
+html:not([data-theme="dark"]) .app-shell .metric{border-color:#e6e7f5;box-shadow:0 9px 25px #41538e11}
+html:not([data-theme="dark"]) .app-shell .preset-pane{background:linear-gradient(140deg,#eaf1ff,#f8efff 70%,#fff0f7)}
+html[data-theme="dark"]{color-scheme:dark;--text:#edf4ff;--muted:#a8b5d1;--line:#37435f;--blue:#8bbaff;--blue-soft:#263e63;--pink:#ffa6c9;--pink-soft:#583348;--violet:#c3a7ff;--violet-soft:#392e5e;--mint:#85dfbd;--mint-soft:#204b45;--amber:#f4ca8e;--amber-soft:#523e32}
+html[data-theme="dark"] body{background:radial-gradient(circle at 16% 22%,#253859,transparent 31%),radial-gradient(circle at 85% 78%,#372747,transparent 39%),#0c1020;color:#edf4ff}
+html[data-theme="dark"] .app-shell{background:#11192a;border-color:#29334a;box-shadow:0 28px 80px #0008,0 8px 40px #8d78dc1a}
+html[data-theme="dark"] .app-shell>.main-area,html[data-theme="dark"] .app-shell .main-area{background:radial-gradient(circle at 94% 5%,#272b51 0,transparent 38%),radial-gradient(circle at 3% 35%,#182e40 0,transparent 47%),#11192a!important;color:#ebf2ff}
+html[data-theme="dark"] .app-shell .topbar{background:linear-gradient(120deg,#19243a,#202239)!important;border-color:#344159;box-shadow:0 5px 15px #060b1677}
+html[data-theme="dark"] .app-shell .mobile-brand,html[data-theme="dark"] .app-shell .page-head h1,html[data-theme="dark"] .app-shell .panel-title,html[data-theme="dark"] .app-shell .month-title{color:#f0f4ff!important}
+html[data-theme="dark"] .app-shell .mobile-brand>span:last-child{color:#c7abff}
+html[data-theme="dark"] .app-shell .theme-toggle{color:#f8d797;border-color:#5f527e;background:linear-gradient(135deg,#353858,#4a355f)}
+html[data-theme="dark"] .app-shell .lang-switch{background:#212d45;border-color:#3a4764}
+html[data-theme="dark"] .app-shell .lang-switch button{color:#b4c3dc}
+html[data-theme="dark"] .app-shell .lang-switch button.active{background:#3d4a70;color:#f5f5ff;box-shadow:0 2px 7px #02071055}
+html[data-theme="dark"] .app-shell .avatar-btn{background:#302947;border-color:#4a4164;color:#e7cbff}
+html[data-theme="dark"] .app-shell>.bottom-nav{background:#192338;border-color:#344159;box-shadow:0 -8px 22px #060a1560}
+html[data-theme="dark"] .app-shell>.bottom-nav .bottom-link{color:#a5b3ce}
+html[data-theme="dark"] .app-shell>.bottom-nav .bottom-link.active{background:#2d4168;color:#b5d4ff}
+html[data-theme="dark"] .app-shell>.bottom-nav .bottom-add{background:linear-gradient(135deg,#508edb,#9674d4);box-shadow:0 6px 23px #7594e366}
+html[data-theme="dark"] .app-shell #main-content,html[data-theme="dark"] .app-shell .page{background:transparent!important}
+html[data-theme="dark"] .app-shell .page-head p,html[data-theme="dark"] .app-shell .caption,html[data-theme="dark"] .app-shell .metric-foot,html[data-theme="dark"] .app-shell .hint{color:#a9bbd6!important}
+html[data-theme="dark"] .app-shell .hero{background:radial-gradient(circle at 83% 17%,#6a527b55,transparent 50%),linear-gradient(135deg,#253e64,#3e315d 59%,#533347)!important;border-color:#544873;box-shadow:0 12px 27px #05091366}
+html[data-theme="dark"] .app-shell .hero h2{color:#f8f1ff}
+html[data-theme="dark"] .app-shell .hero .art-circle{background:linear-gradient(130deg,#5266aa,#8065af)}
+html[data-theme="dark"] .app-shell .panel{background:#1a263b!important;border:1px solid #37435f;box-shadow:0 9px 27px #05091344}
+html[data-theme="dark"] .app-shell .metric{border-color:#394660;box-shadow:0 10px 20px #05091344}
+html[data-theme="dark"] .app-shell .metric.blue{background:linear-gradient(140deg,#223f66,#223553)}
+html[data-theme="dark"] .app-shell .metric.violet{background:linear-gradient(140deg,#413265,#2b2d52)}
+html[data-theme="dark"] .app-shell .metric.pink{background:linear-gradient(140deg,#563247,#392f48)}
+html[data-theme="dark"] .app-shell .metric.mint{background:linear-gradient(140deg,#214a49,#234047)}
+html[data-theme="dark"] .app-shell .metric.amber{background:linear-gradient(140deg,#534534,#3e3d40)}
+html[data-theme="dark"] .app-shell .metric-label{color:#b5c8e1}
+html[data-theme="dark"] .app-shell .metric.blue .metric-value{color:#a4c7ff}
+html[data-theme="dark"] .app-shell .metric.pink .metric-value{color:#ffadc9}
+html[data-theme="dark"] .app-shell .metric.violet .metric-value{color:#d0b9ff}
+html[data-theme="dark"] .app-shell .metric.mint .metric-value{color:#98ebc9}
+html[data-theme="dark"] .app-shell .calendar-cell{background:#1b2a43!important;border-color:#344863;color:#dce7ff}
+html[data-theme="dark"] .app-shell .calendar-cell.outside{background:#172235!important;border-color:#172235}
+html[data-theme="dark"] .app-shell .calendar-cell.selected{background:#304b73!important;border-color:#82adf9;box-shadow:0 0 0 1px #7ca8ef}
+html[data-theme="dark"] .app-shell .date-num{color:#f0f4ff}
+html[data-theme="dark"] .app-shell .weekday,html[data-theme="dark"] .app-shell .week-name{color:#acb9d1}
+html[data-theme="dark"] .app-shell .day-token.blank{background:#28354e;color:#7186aa}
+html[data-theme="dark"] .app-shell .day-token.M,html[data-theme="dark"] .app-shell .shift-pill.M{background:#29517c;color:#bedcff}
+html[data-theme="dark"] .app-shell .day-token.E,html[data-theme="dark"] .app-shell .shift-pill.E{background:#653853;color:#ffb9d8}
+html[data-theme="dark"] .app-shell .day-token.N,html[data-theme="dark"] .app-shell .shift-pill.N{background:#4d3b79;color:#e0c8ff}
+html[data-theme="dark"] .app-shell .day-token.OFF,html[data-theme="dark"] .app-shell .shift-pill.OFF{background:#235348;color:#a7efd4}
+html[data-theme="dark"] .app-shell .day-token.LEAVE,html[data-theme="dark"] .app-shell .shift-pill.LEAVE{background:#665137;color:#ffdfa1}
+html[data-theme="dark"] .app-shell .week-day,html[data-theme="dark"] .app-shell .selected-detail,html[data-theme="dark"] .app-shell .next-card,html[data-theme="dark"] .app-shell .list-row,html[data-theme="dark"] .app-shell .success-card,html[data-theme="dark"] .app-shell .warning-card,html[data-theme="dark"] .app-shell .pay-list,html[data-theme="dark"] .app-shell .backup-row,html[data-theme="dark"] .app-shell .personal-card,html[data-theme="dark"] .app-shell .quick-numbers>div{background:#23324a!important;border-color:#3a4a62;color:#e5efff}
+html[data-theme="dark"] .app-shell .week-day strong,html[data-theme="dark"] .app-shell .selected-detail strong,html[data-theme="dark"] .app-shell .list-row strong{color:#f0f4ff}
+html[data-theme="dark"] .app-shell .donut-hole{background:#1a263b;color:#e9efff}
+html[data-theme="dark"] .app-shell .quick-off-button{background:linear-gradient(110deg,#654263,#593d77);border-color:#82568c;color:#ffcae8}
+html[data-theme="dark"] .app-shell .quick-choice-item span{background:#244e46;color:#a9f0d6}
+html[data-theme="dark"] .app-shell .quick-choice-item:nth-child(2) span{background:#663950;color:#ffc4dd}
+html[data-theme="dark"] .app-shell .action-button.pale{background:#314a71;color:#c2dcff}
+html[data-theme="dark"] .app-shell .action-button.ghost{background:#273750;border-color:#485a77;color:#e1edff}
+html[data-theme="dark"] .app-shell .action-button.danger{background:#513344;color:#ffc2d3;border-color:#765062}
+html[data-theme="dark"] .app-shell .month-btn,html[data-theme="dark"] .app-shell .icon-button,html[data-theme="dark"] .app-shell .preset-edit-btn{background:#2b3e5c;border-color:#45597b;color:#c4d8ff}
+html[data-theme="dark"] .app-shell .preset-pane{background:linear-gradient(140deg,#283b5d,#342b58 65%,#3a2b49);border-color:#4b4a79}
+html[data-theme="dark"] .app-shell .preset-heading strong,html[data-theme="dark"] .app-shell .preset-edit-header strong{color:#f0e8ff}
+html[data-theme="dark"] .app-shell .preset-heading span,html[data-theme="dark"] .app-shell .preset-hint,html[data-theme="dark"] .app-shell .preset-empty{color:#bac7e3}
+html[data-theme="dark"] .app-shell .preset-chip{background:#284973;color:#bcdcff;border-color:#42638a}
+html[data-theme="dark"] .app-shell .preset-chip.E,html[data-theme="dark"] .app-shell .preset-chip.LEAVE{background:#5a3652;color:#ffd0e1;border-color:#78546a}
+html[data-theme="dark"] .app-shell .preset-chip.N,html[data-theme="dark"] .app-shell .preset-chip.CUSTOM{background:#48366d;color:#e0cfff;border-color:#645584}
+html[data-theme="dark"] .app-shell .preset-chip.OFF{background:#2b5349;color:#bbf1d7;border-color:#3a7466}
+html[data-theme="dark"] .app-shell .preset-chip.saved,html[data-theme="dark"] .app-shell .preset-saved-item{background:#2c3553;color:#ebe2ff;border-color:#585075}
+html[data-theme="dark"] .app-shell .preset-remove{background:#573746;color:#ffd0df}
+html[data-theme="dark"] .app-shell .preset-new{background:#3c4670;color:#d1ddff}
+html[data-theme="dark"] .app-shell .preset-edit,html[data-theme="dark"] .app-shell .preset-create{background:#263451;border-color:#4c5478;color:#e7efff}
+html[data-theme="dark"] .app-shell #modal-root .modal-card{background:#1a263b!important;color:#eef5ff!important;border-top:3px solid #967acc!important;box-shadow:0 -15px 30px #02061170}
+html[data-theme="dark"] .app-shell #modal-root .modal-header h2{color:#f5f2ff}
+html[data-theme="dark"] .app-shell #modal-root .modal-overlay{background:#020712a8;backdrop-filter:blur(5px)}
+html[data-theme="dark"] .app-shell .form-input,html[data-theme="dark"] .app-shell .setting-input,html[data-theme="dark"] .app-shell input[type=date],html[data-theme="dark"] .app-shell input[type=time],html[data-theme="dark"] .app-shell textarea,html[data-theme="dark"] .app-shell select{background:#24354e;color:#edf4ff;border-color:#4a5b7b;color-scheme:dark}
+html[data-theme="dark"] .app-shell input::placeholder,html[data-theme="dark"] .app-shell textarea::placeholder{color:#a1acc5}
+html[data-theme="dark"] .app-shell .form-label,html[data-theme="dark"] .app-shell #modal-root .modal-header .eyebrow{color:#c8d6ee!important}
+html[data-theme="dark"] .app-shell .form-field small,html[data-theme="dark"] .app-shell .setting-info small{color:#b5c1d7}
+html[data-theme="dark"] .app-shell .setting-row,html[data-theme="dark"] .app-shell .section-divider,html[data-theme="dark"] .app-shell .shift-config{border-color:#3b4860}
+html[data-theme="dark"] .app-shell .nf-sb-panel,html[data-theme="dark"] .app-shell .nf-sb-advanced{background:#202f49;border-color:#466084;color:#e7efff}
+html[data-theme="dark"] .app-shell .nf-sb-note,html[data-theme="dark"] .app-shell .nf-sb-panel #nf-sb-message,html[data-theme="dark"] .app-shell .nf-sb-toggle{color:#bbd3ef}
+html[data-theme="dark"] .app-shell .nf-sb-pill{background:#284972;color:#bbd9ff}
+html[data-theme="dark"] .app-shell .nf-sb-signout{color:#aebee0}
+html[data-theme="dark"] .app-shell .responsive-table th,html[data-theme="dark"] .app-shell .responsive-table td{background:#1a263b;color:#eaf2ff;border-color:#394b65}
+html[data-theme="dark"] .app-shell .responsive-table tr:nth-child(even) td{background:#213049}
+html[data-theme="dark"] .app-shell .note-bullet{background:#453828;color:#ffdfa7}
+html[data-theme="dark"] .app-shell .toast{background:#345175;color:#fff}
+html[data-theme="dark"] .app-shell .empty{background:#24334d!important;color:#dde9ff;border:1px solid #40516d}
+html[data-theme="dark"] .app-shell .empty strong{color:#eef5ff}
+html[data-theme="dark"] .app-shell .empty p{color:#b9c9e1}
+@media(max-width:355px){.app-shell .theme-toggle{width:31px;flex-basis:31px;height:32px}.app-shell .header-actions{gap:3px}.app-shell .avatar-btn{width:29px;flex-basis:29px}.preset-edit-actions .action-button{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.app-shell .theme-toggle{transition:none}}
