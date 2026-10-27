@@ -240,11 +240,12 @@ function presetDuplicate(id){
 }
 function presetMove(id,direction){
  const before=data.settings.presets||[],ordered=before.map((p,i)=>({...p,_idx:i})).sort((a,b)=>Number(!!b.favorite)-Number(!!a.favorite)||a._idx-b._idx);
- const index=ordered.findIndex(x=>x.id===id),other=ordered[index+direction];if(index<0||!other)return;
+ const index=ordered.findIndex(x=>x.id===id);if(index<0)return;
+ const peer=ordered[index+direction];if(!peer)return;
+ if(!!peer.favorite!==!!ordered[index].favorite){toast('จัดลำดับภายในกลุ่มโปรดหรือกลุ่มปกติได้');return}
  const swapped=ordered.map(({_idx,...p})=>p);
  [swapped[index],swapped[index+direction]]=[swapped[index+direction],swapped[index]];
- const count=before.filter(p=>p.favorite).length;
- data.settings.presets=swapped.map((p,i)=>({...p,favorite:i<count}));
+ data.settings.presets=swapped;
  if(commit('จัดลำดับพรีเซตแล้ว'))refreshPresetList();else data.settings.presets=before;
 }
 function removeEditorPreset(id){const old=data.settings.presets||[],p=old.find(x=>x.id===id);if(!p)return;if(!confirm('ลบพรีเซต '+p.name+' ใช่หรือไม่?'))return;
